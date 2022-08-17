@@ -17,7 +17,7 @@ const Login = (props) => {
 					props.states.setLogin(true);
 				}
 			})
-			.err((err) => {
+			.then((err) => {
 				console.log(err);
 			});
 	};
@@ -33,8 +33,10 @@ const Login = (props) => {
 				</div>
 				{isErr === true ? (
 					<div>
-						<p style={{ color: "red" }}>Email not present in DB</p>
-						<p>kindly contact your admin</p>
+						<span style={{ color: "red" }}>
+							Email not present in DB
+						</span>
+						<span>kindly contact your admin</span>
 					</div>
 				) : (
 					""
